@@ -11,7 +11,18 @@ $whoops->register();
 // Application 
 $db = new Database();
 
-print_r($db->select("SELECT * FROM users WHERE username = 'vytas'"));
+print_r($db->select(
+	"SELECT * FROM users WHERE username = :username", 
+	["username" => 'matas'])
+);
+
+echo $db->insert("INSERT INTO users (name, username, password) VALUES (:name, :username, :password)", 
+	[
+	"name" => 'king-' . rand(1000,9999),
+	"username" => 'king',
+	"password" => password_hash('labas', PASSWORD_DEFAULT)
+	]
+);
 
 // require('classes/TransportInterface.php');
 // require('classes/Car.php');
