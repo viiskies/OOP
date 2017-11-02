@@ -1,10 +1,16 @@
 <?php
 
 Interface GameInterface {
-	// store game result...
-	// get all.
-	// get my
-	// get top winners 5 $$$
+    public function getAllGames();
+	
+	// Get user games by the user id
+    public function getUserGames(int $id);
+	
+	// // Get the best players
+ //    public function getTopWinners(int $count) : array;
+	
+	// // Get players who played the most
+ //    public function getTopPlayers(int $count) : array;
 }
 
 class Game implements GameInterface {
@@ -14,7 +20,15 @@ class Game implements GameInterface {
 		$this->db = $db;
 	}
 
-	// store result 
+	public function getAllGames() {
+		return $this->db->select("SELECT * FROM games");
+	}	
+
+	public function getUserGames(int $id) {
+		return $this->db->select("SELECT games.* FROM games JOIN users ON users.username = games.username WHERE users.id = :id", 
+			["id" => $id]
+		);
+	}
 
 	//
 }
