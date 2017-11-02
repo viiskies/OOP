@@ -8,18 +8,23 @@ $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
 
+// Application 
+$db = new Database();
+
+print_r($db->select("SELECT * FROM users WHERE username = 'vytas'"));
+
 // require('classes/TransportInterface.php');
 // require('classes/Car.php');
 // require('classes/ElectricCar.php');
 
-$petro_automobilis = new Car(4, 2, 1500, 1199);
-$jono_automobilis = new ElectricCar(3, 2, 300, 550);
+// $petro_automobilis = new Car(4, 2, 1500, 1199);
+// $jono_automobilis = new ElectricCar(3, 2, 300, 550);
 
-// var_dump($petro_automobilis);
-// var_dump($jono_automobilis);
+// // var_dump($petro_automobilis);
+// // var_dump($jono_automobilis);
 
-$petro_automobilis->go();
-$jono_automobilis->go();
+// $petro_automobilis->go();
+// $jono_automobilis->go();
 
 // by default
 // echo $petro_automobilis->doorCount;
