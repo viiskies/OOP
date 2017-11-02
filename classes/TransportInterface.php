@@ -7,5 +7,4 @@ interface TransportInterface {
 	public function break();
 
 
-
 }

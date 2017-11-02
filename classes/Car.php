@@ -1,5 +1,4 @@
 <?php 
-// require('classes/TransportInterface.php');
 class Car implements TransportInterface {
 
 	//attributes

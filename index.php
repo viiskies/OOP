@@ -1,9 +1,12 @@
 <pre>
 <?php
 
-spl_autoload_register(function ($class_name) {
-	include "classes/" . $class_name . '.php';
-});
+require "vendor/autoload.php";
+
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
+
 
 // require('classes/TransportInterface.php');
 // require('classes/Car.php');
