@@ -10,19 +10,22 @@ $whoops->register();
 
 // Application 
 $db = new Database();
+$user = new User($db);
+// print_r($user->removeUser(20));
+print_r($user->addUser('king', 'john', 'fun'));
 
-print_r($db->select(
-	"SELECT * FROM users WHERE username = :username", 
-	["username" => 'matas'])
-);
+// print_r($db->select(
+// 	"SELECT * FROM users WHERE username = :username", 
+// 	["username" => 'matas'])
+// );
 
-echo $db->insert("INSERT INTO users (name, username, password) VALUES (:name, :username, :password)", 
-	[
-	"name" => 'king-' . rand(1000,9999),
-	"username" => 'king',
-	"password" => password_hash('labas', PASSWORD_DEFAULT)
-	]
-);
+// echo $db->insert("INSERT INTO users (name, username, password) VALUES (:name, :username, :password)", 
+// 	[
+// 	"name" => 'king-' . rand(1000,9999),
+// 	"username" => 'king',
+// 	"password" => password_hash('labas', PASSWORD_DEFAULT)
+// 	]
+// );
 
 // require('classes/TransportInterface.php');
 // require('classes/Car.php');

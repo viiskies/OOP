@@ -42,6 +42,13 @@ class Database {
 		return $this->connection->lastInsertId();
 	}
 
+	public function remove(string $sql, array $param = []) : bool { 
+		$statement = $this->connection->prepare($sql);
+		// $sql = "DELETE FROM MyGuests WHERE id=3";
+		// $statement->execute($param);
+		return $statement->execute($param);
+	}
+
 	function __destruct() {
 		$this->connection = null;
 	}
