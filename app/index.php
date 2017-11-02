@@ -1,3 +1,4 @@
 <?php
 
-print_r($game->getUserGames(1));
+$fun = 2;
+print_r($game->getTopWinners($fun));
