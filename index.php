@@ -1,5 +1,5 @@
-<pre>
 <?php
+$start = microtime(true);
 
 require "vendor/autoload.php";
 
@@ -32,3 +32,9 @@ $jono_automobilis->go();
 // $petro_automobilis->go();
 // $petro_automobilis->stop();
 // $petro_automobilis->getWeight();
+
+echo '<div style="position: absolute; left: 0px; bottom: 0px; background-color: green; padding: 10px;">';
+echo round((microtime(true) - $start) * 1000, 2) . "ms <br>";
+echo " & " . round(memory_get_peak_usage()/(1024*1024), 2) . " MB";
+echo '</div>';
+?>
