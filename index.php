@@ -11,8 +11,9 @@ $whoops->register();
 // Application 
 $db = new Database();
 $user = new User($db);
-// print_r($user->removeUser(20));
-print_r($user->addUser('king', 'john', 'fun'));
+$game = new Game($db);
+
+require('app/index.php');
 
 // print_r($db->select(
 // 	"SELECT * FROM users WHERE username = :username", 
